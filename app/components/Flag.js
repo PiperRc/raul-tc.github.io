@@ -18,7 +18,7 @@ export function Flag(props) {
 
   document.addEventListener("click", (e) => {
     if (e.target.matches(".backHome") || e.target.matches(".backHome *")) {
-      location.href = "http://127.0.0.1:5500/FlagsChallengeSPA/";
+      location.href = "http://127.0.0.1:5500/";
     }
   });
 
@@ -76,14 +76,15 @@ export function Flag(props) {
   }, 100);
   return `
     <button class="backHome" data-dark="darkMode">
-   <img src="app/assets/arrowLeft.svg" alt="" srcset="">
+   <img src="app/assets/arrowLeft.svg" alt="arrowBackDarkMode"  class="arrowLeftDark">
+   <img src="app/assets/arrowLeftWhite.svg" alt="arrowBackLightMode"  class="arrowLeftWhite none">
    <p>Back</p>
     </button>
   
     <div class="container-flag">
 
     <div class="imgContainer">
-    <img src="${flags.png}" alt="${name.common}">
+    <img src="${flags.svg}" alt="${name.common}">
     </div>
 
     <div class="specs">

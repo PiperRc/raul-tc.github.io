@@ -54,7 +54,8 @@ export function FilterOptions() {
   <div class="mainFilter" data-dark = "darkMode">
   
   <p>Filter by Region</p>
-  <img src="app/assets/arrowMenuBlack.svg" alt="" srcset="">
+  <img src="app/assets/arrowMenuBlack.svg" alt="" srcset="" class="arrowBlack">
+    <img src="app/assets/arrowMenuWhite.svg" alt="" srcset=""  class="arrowWhite none" >
   </div>
   <span class="none deleteFilter">Clear Filter</span>
  <div class="options none" data-dark = "darkMode">

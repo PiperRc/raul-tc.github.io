@@ -12,30 +12,60 @@ export function DarkMode() {
     $selectors.forEach((el) => el.classList.remove("classDark"));
 
     $containerButton.innerHTML = moon;
-    // document.querySelector(
-    //   ".backHome"
-    // ).innerHTML = `<img src="app/assets/arrowLeft.svg" alt=""> <p>Back</p>`;
+
+    // document
+    //   .querySelectorAll(".flag")
+    //   .forEach((el) => (el.style.boxShadow = "0px 1px 5px var(--input)"));
     ls.setItem("theme", "light");
 
-    document
-      .querySelectorAll(".bordeCountry span")
-      .classList.remove("classDark");
-  };
-  const darkMode = () => {
-    $selectors.forEach((el) => el.classList.add("classDark"));
-    $containerButton.innerHTML = sun;
+    if (
+      document.querySelector(".arrowBlack") ||
+      document.querySelector(".arrowWhite")
+    ) {
+      document.querySelector(".arrowBlack").classList.remove("none");
+      document.querySelector(".arrowWhite").classList.add("none");
+    }
+
+    if (
+      document.querySelector(".arrowLeftDark") ||
+      document.querySelector(".arrowLeftWhite ")
+    ) {
+      document.querySelector(".arrowLeftDark").classList.remove("none");
+      document.querySelector(".arrowLeftWhite ").classList.add("none");
+    }
+
     // document.querySelector(
     //   ".backHome"
     // ).innerHTML = `<img src="app/assets/arrowLeftWhite.svg" alt=""> <p>Back</p>`;
+  };
+  const darkMode = () => {
+    // $selectors.forEach((el) => el.classList.add("classDark"));
+    $containerButton.innerHTML = sun;
+    if (
+      document.querySelector(".arrowBlack") ||
+      document.querySelector(".arrowWhite")
+    ) {
+      document.querySelector(".arrowBlack").classList.add("none");
+      document.querySelector(".arrowWhite").classList.remove("none");
+    }
 
-    // document.querySelectorAll(".bordeCountry span").classList.add("classDark");
+    if (
+      document.querySelector(".arrowLeftDark") ||
+      document.querySelector(".arrowLeftWhite ")
+    ) {
+      document.querySelector(".arrowLeftDark").classList.add("none");
+      document.querySelector(".arrowLeftWhite ").classList.remove("none");
+    }
+    // document
+    //   .querySelectorAll(".flag")
+    //   .forEach((el) => (el.style.boxShadow = "none"));
     ls.setItem("theme", "dark");
   };
 
   d.addEventListener("click", (e) => {
     console.info(e.target);
     if (
-      e.target.matches(".container_button img") ||
+      e.target.matches(".container_button ") ||
       e.target.matches(".container_button *")
     ) {
       if ($containerButton.innerHTML === moon) {
@@ -51,17 +81,14 @@ export function DarkMode() {
   if (ls.getItem("theme") === null) {
     ls.setItem("theme", "light");
   }
-  if (ls.getItem("theme") === "light" && location.hash !== "") {
+  if (ls.getItem("theme") === "light") {
     document.querySelector("body").classList.remove("classDark");
-
     lightMode();
   }
 
-  if (ls.getItem("theme") === "dark" && location.hash !== "") {
+  if (ls.getItem("theme") === "dark") {
     document.querySelector("body").classList.add("classDark");
-    document.querySelector(
-      ".backHome"
-    ).innerHTML = `<img src="app/assets/arrowLeftWhite.svg" alt=""> <p>Back</p>`;
+
     darkMode();
   }
 }

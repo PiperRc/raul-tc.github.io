@@ -10,7 +10,6 @@ export function Router() {
     $main = d.getElementById("main");
 
   let { hash } = location;
-  console.info(hash);
   $main.innerHTML = null;
 
   if (!hash || hash === "#/") {
@@ -26,7 +25,7 @@ export function Router() {
 
           $containerFlag.innerHTML = htmlContent;
         });
-        DarkMode();
+        // DarkMode();
         document.querySelector(".loader").style.display = "none";
       },
     });
