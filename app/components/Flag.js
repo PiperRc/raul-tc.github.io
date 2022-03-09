@@ -18,7 +18,7 @@ export function Flag(props) {
 
   document.addEventListener("click", (e) => {
     if (e.target.matches(".backHome") || e.target.matches(".backHome *")) {
-      location.href = "http://127.0.0.1:5500/";
+      location.href = "https://raul-tc.github.io/";
     }
   });
 
