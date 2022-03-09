@@ -4,8 +4,8 @@ export function DarkMode() {
     //  $selectors = d.querySelectorAll("[data-dark]"),
     $iconBtn = d.querySelector(".dark_mode"),
     $containerButton = d.querySelector(".container_button");
-  let moon = `<img class="dark_mode" src="app/assets/moon.svg"> <p>Dark Mode</p>`;
-  let sun = `<img class="dark_mode" src="app/assets/sun.svg">  <p>Light Mode</p>`;
+  let moon = `<img class="dark_mode" src="app/assets/moon.svg" alt="moonDarkModeOption"> <p>Dark Mode</p>`;
+  let sun = `<img class="dark_mode" src="app/assets/sun.svg" alt ="SunLightModeOption"> <p>Light Mode</p>`;
 
   //  console.info($selectors);
   const lightMode = () => {
@@ -13,22 +13,12 @@ export function DarkMode() {
 
     $containerButton.innerHTML = moon;
 
-    // document
-    //   .querySelectorAll(".flag")
-    //   .forEach((el) => (el.style.boxShadow = "0px 1px 5px var(--input)"));
     ls.setItem("theme", "light");
-
-    // document.querySelector(
-    //   ".backHome"
-    // ).innerHTML = `<img src="app/assets/arrowLeftWhite.svg" alt=""> <p>Back</p>`;
   };
   const darkMode = () => {
     // $selectors.forEach((el) => el.classList.add("classDark"));
     $containerButton.innerHTML = sun;
 
-    // document
-    //   .querySelectorAll(".flag")
-    //   .forEach((el) => (el.style.boxShadow = "none"));
     ls.setItem("theme", "dark");
   };
 

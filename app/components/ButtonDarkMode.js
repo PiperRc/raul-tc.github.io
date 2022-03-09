@@ -9,6 +9,7 @@ export function ButtonDarkMode() {
   $text.textContent = `Dark Mode`;
 
   $button.src = "app/assets/moon.svg";
+  $button.alt = "moonDarkModeOption";
 
   $containerButton.appendChild($button);
   $containerButton.appendChild($text);
