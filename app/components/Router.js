@@ -35,13 +35,13 @@ export function Router() {
     //const $containerFlag = d.getElementById("containerFlags");
 
     requestFlag({
-      url: `https://restcountries.com/v3.1/name/${urlCountry}`,
+      url: `https://restcountries.com/v3.1/name/${urlCountry}?fullText=true`,
       cbSuccess: (flagData) => {
         $main.innerHTML = Flag(flagData[0]);
-        DarkMode();
         document.querySelector(".loader").style.display = "none";
       },
     });
-    document.querySelector(".loader").style.display = "none";
+    //DarkMode();
+    // document.querySelector(".loader").style.display = "none";
   }
 }

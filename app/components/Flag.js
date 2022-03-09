@@ -40,15 +40,12 @@ export function Flag(props) {
     let valores = Object.values(languages); // claves = ["nombre", "color", "macho", "edad"]
     let lang = "";
     let cadena;
+    var expresionRegular = " ";
     for (let i = 0; i < valores.length; i++) {
-      if (valores.length === 1) {
-        lang += `${valores[i]}`;
-      } else {
-        lang += `${valores[i]} `;
-      }
+      lang = `${valores}`;
     }
-    let ab = lang.split(" ");
-    return ab;
+
+    return lang;
   };
   const getBorder = async () => {
     if (!borders) {
@@ -76,8 +73,7 @@ export function Flag(props) {
   }, 100);
   return `
     <button class="backHome" data-dark="darkMode">
-   <img src="app/assets/arrowLeft.svg" alt="arrowBackDarkMode"  class="arrowLeftDark">
-   <img src="app/assets/arrowLeftWhite.svg" alt="arrowBackLightMode"  class="arrowLeftWhite none">
+  <div class="back"></div>
    <p>Back</p>
     </button>
   
@@ -99,13 +95,13 @@ export function Flag(props) {
       givenNumber
     )}</b></p>
     <p><b>Region:</b>${region}</p>
-    <p><b>Region:</b>${subregion}</p>
-    <p><b>Region:</b>${capital}</p>
+    <p><b>Sub Region:</b>${subregion}</p>
+    <p><b>Capital:</b>${capital}</p>
     </div>
     <div class="frontier">
     <p><b>Top Level Domain:</b>${tld[0]}</p>
     <p><b>Currencies:</b>${getCurrencies()}</p>
-    <p><b>Languages:</b>${getLanguages()}</p>
+    <p><b>Languages:</b>${getLanguages()}</p> 
     </div>
 </div>
 <div class="border">

@@ -21,6 +21,7 @@ body {
   --input: hsl(0, 0%, 52%);
   --background: hsl(0, 0%, 98%);
   --dark-mode-text-and-light-mode-elements: hsl(0, 0%, 100%);
+  --image-white: url("Vector.png");
   margin: 0;
   overflow-x: hidden;
   background-color: var(--background);
@@ -32,6 +33,7 @@ body.classDark {
   --background: hsl(207, 26%, 17%);
   --dark-mode-elements: none;
   --dark-mode-text-and-light-mode-elements: hsl(209, 23%, 22%);
+  --image-white: url("arrowLeftWhite1.png");
   background-color: var(--background);
   box-shadow: none;
 }
@@ -62,11 +64,19 @@ header {
 }
 .container_button {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: auto;
   align-items: center;
   cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
 }
 .container_button p {
   color: var(--light-mode-text);
+  width: 100%;
 }
 .container_button__title {
   margin-left: 0.5rem;
@@ -198,7 +208,7 @@ header {
 
 /* Single Flag */
 .backHome {
-  width: 10%;
+  width: 6rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -210,6 +220,14 @@ header {
   outline: none;
   box-shadow: 0px 1px 5px var(--dark-mode-elements);
   cursor: pointer;
+}
+.back {
+  background: var(--image-white);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
 }
 .backHome p {
   color: var(--light-mode-text);
@@ -238,6 +256,7 @@ header {
   display: flex;
   justify-content: space-between;
 }
+
 .specs {
   display: flex;
   flex-direction: column;
@@ -256,7 +275,7 @@ header {
   background-color: var(--dark-mode-text-and-light-mode-elements);
 
   box-shadow: 0px 1px 5px var(--dark-mode-elements);
-  margin: 0.5rem 0.5rem 0;
+  margin: 0 0.5rem 0 0.5rem;
 }
 .loader {
   margin: 1rem auto;
