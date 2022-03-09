@@ -1,5 +1,5 @@
 export function Flags(props) {
-  let { flags, name, population, region, capital } = props;
+  let { flags, name, population, region, capital, altSpellings } = props;
 
   const givenNumber = population;
 
@@ -11,7 +11,7 @@ export function Flags(props) {
   }" data-dark = "darkMode">
 
   <div class="flag_image"  data-dark = "darkMode">
- <a href="#/${name.common}"><img src="${flags.png}" alt="${
+ <a href="#/${altSpellings[0]}"><img src="${flags.png}" alt="${
     name.common
   }_flag"></a> 
   </div>

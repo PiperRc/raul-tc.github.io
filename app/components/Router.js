@@ -35,7 +35,7 @@ export function Router() {
     //const $containerFlag = d.getElementById("containerFlags");
 
     requestFlag({
-      url: `https://restcountries.com/v3.1/name/${urlCountry}?fullText=true`,
+      url: `https://restcountries.com/v3.1/alpha/${urlCountry}`,
       cbSuccess: (flagData) => {
         $main.innerHTML = Flag(flagData[0]);
         document.querySelector(".loader").style.display = "none";
