@@ -7,6 +7,7 @@ export function FilterOptions() {
   d.addEventListener("click", (e) => {
     //  console.info(e.target);
     if (e.target.matches(".mainFilter *") || e.target.matches(".mainFilter")) {
+      d.querySelector(".filterRegionArrow").classList.toggle("rotate");
       d.querySelector(".options").classList.toggle("none");
     }
 
@@ -35,27 +36,41 @@ export function FilterOptions() {
   });
 
   d.addEventListener("keyup", (e) => {
+    e.stopPropagation();
     if (e.key === "Escape") {
       e.target.value = "";
     }
 
+    let coincidencias = 0;
     d.querySelectorAll("[data-id]").forEach((el) => {
-      d.querySelector(".options").classList.remove("deleteFilter");
-      el.dataset.name.includes(e.target.value);
-
+      el.dataset.name;
+      console.info(el.dataset.name.includes(e.target.value));
       if (el.dataset.name.includes(e.target.value)) {
+        coincidencias += 1;
         el.classList.remove("filter");
       } else {
         el.classList.add("filter");
+        if (coincidencias === 0) {
+        }
       }
+      // console.info(coincidencias);
+      //   el.classList.remove("filter");
+      // } else {
+      //   el.classList.add("filter");
+      //   setTimeout(() => {
+      //     document.getElementById(
+      //       "containerFlags"
+      //     ).innerHTML = `<h2>Not Fouund <a href="http://127.0.0.1:5500/">Back to Home</a></h2>`;
+      //   }, 3000);
+      // }
     });
   });
   $select.innerHTML = `
   <div class="mainFilter" data-dark = "darkMode">
   
   <p>Filter by Region</p>
-  <img src="app/assets/arrowMenuBlack.svg" alt="arrowMenuDarkMode" class="arrowBlack">
-    <img src="app/assets/arrowMenuWhite.svg" alt="arrowMenuLightMode" class="arrowWhite none" >
+  <span class="filterRegionArrow"></span>
+  
   </div>
   <span class="none deleteFilter">Clear Filter</span>
  <div class="options none" data-dark = "darkMode">

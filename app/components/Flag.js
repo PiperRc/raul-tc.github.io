@@ -58,7 +58,8 @@ export function Flag(props) {
         await requestFlag({
           url: `https://restcountries.com/v3.1/alpha/${border}`,
           cbSuccess: (abc) => {
-            data += `<span data-dark="darkMode">${abc[0].name.common}</span>`;
+            console.info(abc);
+            data += `<a href="#/${abc[0].cca2}"><span data-dark="darkMode">${abc[0].name.common}</span></a>`;
             //  console.info(data);
             document.querySelector(".bordeCountry").innerHTML = data;
           },

@@ -19,6 +19,8 @@ body {
   --background: hsl(0, 0%, 98%);
   --dark-mode-text-and-light-mode-elements: hsl(0, 0%, 100%);
   --image-white: url("Vector.png");
+  --arrowMenu-white: url("arrowMenuBlack.svg");
+  --arrow-Top: url("arrowMenuWhite.svg");
   margin: 0;
   overflow-x: hidden;
   background-color: var(--background);
@@ -32,6 +34,8 @@ body.classDark {
   --input: none;
   --dark-mode-text-and-light-mode-elements: hsl(209, 23%, 22%);
   --image-white: url("arrowLeftWhite1.png");
+  --arrowMenu-white: url("arrowMenuWhite.svg");
+  --arrow-Top: url("arrowMenuBlack.svg");
   background-color: var(--background);
   box-shadow: none;
 }
@@ -48,14 +52,22 @@ img {
 /* Header*/
 
 header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   height: 80px;
+  width: 100%;
+  margin: 0 auto;
   box-shadow: 0px 0px 5px var(--input);
   background-color: var(--dark-mode-text-and-light-mode-elements);
+  box-shadow: 0px 0px 5px var(--input);
 }
 
+.containerheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100%;
+}
 .header_title {
   font-weight: 700;
   color: var(--light-mode-text);
@@ -72,9 +84,8 @@ header {
   border: none;
   background-color: transparent;
 }
-.container_button p {
+.container_button {
   color: var(--light-mode-text);
-  width: 100%;
 }
 .container_button__title {
   margin-left: 0.5rem;
@@ -127,6 +138,7 @@ header {
 .mainFilter {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   box-shadow: 0px 1px 5px var(--input);
   border-radius: 5px;
   background-color: var(--dark-mode-text-and-light-mode-elements);
@@ -150,6 +162,7 @@ header {
   padding: 0.5rem 0;
   cursor: pointer;
   color: var(--light-mode-text);
+  transition: all 0.3s ease;
 }
 .options p {
   display: block;
@@ -160,8 +173,8 @@ header {
 }
 
 .options p:hover {
-  background-color: var(--input);
-  color: var(--light-mode-text);
+  background-color: var(--dark-mode-background);
+  color: var(--background);
 }
 
 .deleteFilter {
@@ -188,6 +201,20 @@ header {
   box-shadow: 0px 1px 5px var(--input);
   border-radius: 10px;
   margin: 1rem auto;
+}
+.flag_image {
+  width: 100%;
+  height: 209px;
+}
+.flag a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.flag a img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  height: 100%;
 }
 .flag_short__description {
   margin: 1rem 0 1rem 1.5rem;
@@ -227,6 +254,19 @@ header {
   width: 25px;
   height: 25px;
 }
+.filterRegionArrow {
+  background: var(--arrowMenu-white);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  line-height: 50px;
+  transition: transform 0.3s ease;
+}
+.rotate {
+  transform: rotate(180deg);
+}
 .backHome p {
   color: var(--light-mode-text);
   padding: 0.2rem;
@@ -248,7 +288,10 @@ header {
 .imgContainer img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  aspect-ratio: 3 /2;
+  height: 100%;
+  width: 100%;
 }
 .containerallData {
   display: flex;
@@ -266,20 +309,54 @@ header {
   align-items: center;
 }
 
-.bordeCountry span {
+.bordeCountry a {
+  text-decoration: none;
+  background-color: var(--dark-mode-text-and-light-mode-elements);
+  box-shadow: 0px 1px 5px var(--input);
   display: inline-block;
   font-size: 12px;
   padding: 0.25rem 1rem;
-  background-color: var(--dark-mode-text-and-light-mode-elements);
-
-  box-shadow: 0px 1px 5px var(--input);
   margin: 0 0.5rem 0.25rem 0.5rem;
+  color: var(--light-mode-text);
+}
+
+.bordeCountry a:hover {
+  background-color: rgba(128, 128, 128, 0.603);
 }
 .loader {
   margin: 1rem auto;
   display: block;
   width: 4rem;
   height: 4rem;
+}
+
+.containerArrowTop {
+  background-color: var(--dark-mode-background);
+  height: 60px;
+  width: 60px;
+  position: fixed;
+  border: none;
+  z-index: 999;
+  bottom: 1vh;
+  right: 6vw;
+  display: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.scrollTop {
+  background: var(--arrow-Top);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.2rem;
+  display: none;
+}
+.visible {
+  display: flex;
 }
 /* Cards */
 @media screen and (max-width: 428px) {
@@ -348,12 +425,6 @@ header {
     font-size: 16px;
     display: block;
   }
-  /* .flag_short__description {
-    margin: 1rem 0 1rem 1.5rem;
-  } */
-  /* .title_flag {
-    margin: 0;
-  } */
 
   /* Flag */
   .bordeCountry {
@@ -387,12 +458,7 @@ header {
   .border p {
     align-self: flex-start;
   }
-  /* .country-spec,
-  .frontier,
-  .border {
-    margin: 2rem 0;
-    font-size: 14px;
-  } */
+
   .bordeCountry span {
     display: inline-block;
     font-size: 12px;
@@ -408,45 +474,3 @@ header {
     height: 4rem;
   }
 }
-/* DarkMode*/
-
-/*
-.classDark {
-  /* background-color: var(--dark-mode-elements); 
-  color: var(--dark-mode-text-and-light-mode-elements);
-  box-shadow: none;
-}
-
-body.classDark,
-main.classDark {
-  background-color: var(--dark-mode-background);
-}
-
-header.classDark,
-.searchCountry input.classDark,
-.searchCountry input.classDark::placeholder,
-.searchCountry img.classDark,
-.flag.classDark.classDark,
-.mainFilter.classDark,
-input.classDark,
-.searchCountry.classDark,
-.options.classDark,
-img.classDark,
-span.classDark,
-.backHome.classDark {
-  background-color: var(--dark-mode-elements);
-  color: var(--dark-mode-text-and-light-mode-elements);
-}
-.container_button {
-  cursor: pointer;
-}
-.backHome.classDark {
-  background-color: var(--dark-mode-elements);
-}
-.bordeCountry span.classDark {
-  background-color: var(--dark-mode-elements);
-  color: var(--dark-mode-text-and-light-mode-elements);
-  box-shadow: none;
-}
-
-*/

@@ -4,5 +4,6 @@
 
 ---
 
-Single page application with vanilla javascript
+### Single page application with vanilla javascript
+
 **technology used:** JavaScript / HTML / CSS / API / SPA

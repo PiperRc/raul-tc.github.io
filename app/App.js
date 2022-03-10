@@ -1,9 +1,8 @@
-import { ContainerFlags } from "./components/ContainerFlags.js";
 import { Header } from "./components/Header.js";
 import { Loader } from "./components/Loader.js";
 import { Main } from "./components/Main.js";
 import { Router } from "./components/Router.js";
-import { DarkMode } from "./helpers/DarkMode.js";
+import { ScrollTop } from "./components/ScrollTop.js";
 
 export function App() {
   const $root = document.getElementById("root");
@@ -12,6 +11,6 @@ export function App() {
   $root.appendChild(Header());
   $root.appendChild(Main());
   $root.appendChild(Loader());
-
+  $root.appendChild(ScrollTop());
   Router();
 }

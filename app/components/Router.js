@@ -1,4 +1,3 @@
-import { DarkMode } from "../helpers/DarkMode.js";
 import { requestFlag } from "../helpers/requestFlag.js";
 import { ContainerFlags } from "./ContainerFlags.js";
 import { Flag } from "./Flag.js";
@@ -25,14 +24,13 @@ export function Router() {
 
           $containerFlag.innerHTML = htmlContent;
         });
-        // DarkMode();
+
         document.querySelector(".loader").style.display = "none";
       },
     });
   } else {
     let urlCountry = hash.substring(2).toLocaleLowerCase();
     $main.appendChild(ContainerFlags());
-    //const $containerFlag = d.getElementById("containerFlags");
 
     requestFlag({
       url: `https://restcountries.com/v3.1/alpha/${urlCountry}`,
