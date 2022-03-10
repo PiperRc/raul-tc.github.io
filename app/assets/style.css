@@ -69,6 +69,7 @@ header {
   height: 100%;
 }
 .header_title {
+  font-size: 24px;
   font-weight: 700;
   color: var(--light-mode-text);
 }
@@ -360,6 +361,12 @@ header {
 }
 /* Cards */
 @media screen and (max-width: 428px) {
+  .containerheader {
+    width: 90%;
+  }
+  .header_title {
+    font-size: 18px;
+  }
   #containerFlags {
     width: 70%;
     margin: 0 auto;
