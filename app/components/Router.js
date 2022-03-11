@@ -1,5 +1,6 @@
 import { requestFlag } from "../helpers/requestFlag.js";
 import { ContainerFlags } from "./ContainerFlags.js";
+import { ErrorSearch } from "./ErrorSearch.js";
 import { Flag } from "./Flag.js";
 import { Flags } from "./Flags.js";
 import { Home } from "./Home.js";
@@ -25,6 +26,7 @@ export function Router() {
           $containerFlag.innerHTML = htmlContent;
         });
 
+        $containerFlag.appendChild(ErrorSearch());
         document.querySelector(".loader").style.display = "none";
       },
     });
@@ -39,7 +41,5 @@ export function Router() {
         document.querySelector(".loader").style.display = "none";
       },
     });
-    //DarkMode();
-    // document.querySelector(".loader").style.display = "none";
   }
 }

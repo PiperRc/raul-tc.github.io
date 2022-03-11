@@ -50,7 +50,11 @@ img {
   position: relative;
 }
 /* Header*/
-
+.error {
+  display: block;
+  margin: 0 auto;
+  color: var(--light-mode-text);
+}
 header {
   height: 80px;
   width: 100%;
@@ -128,7 +132,7 @@ header {
 .searchCountry input {
   border: none;
   padding: 0.5rem;
-  width: 30%;
+  width: 90%;
   outline: none;
   color: var(--light-mode-text);
   background-color: var(--dark-mode-text-and-light-mode-elements);
@@ -213,9 +217,10 @@ header {
   display: block;
 }
 .flag a img {
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 3.2 / 2;
   object-fit: cover;
   height: 100%;
+  width: 100%;
 }
 .flag_short__description {
   margin: 1rem 0 1rem 1.5rem;
@@ -404,7 +409,7 @@ header {
   .container-flag {
     flex-direction: column;
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
   }
 
   .imgContainer {
@@ -441,9 +446,7 @@ header {
     width: 30%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 30px;
-    /* margin: 2rem 0 4rem; */
+    justify-content: space-evenly;
     margin-left: 38px;
     background-color: var(--dark-mode-text-and-light-mode-elements);
     border: none;

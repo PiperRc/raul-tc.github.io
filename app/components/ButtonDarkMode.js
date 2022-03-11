@@ -12,7 +12,5 @@ export function ButtonDarkMode() {
   $button.alt = "moonDarkModeOption";
 
   $containerButton.appendChild($button);
-  //$containerButton.appendChild($text);
-
   return $containerButton;
 }

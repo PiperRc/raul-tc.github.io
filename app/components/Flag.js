@@ -60,11 +60,9 @@ export function Flag(props) {
           cbSuccess: (abc) => {
             console.info(abc);
             data += `<a href="#/${abc[0].cca2}"><span data-dark="darkMode">${abc[0].name.common}</span></a>`;
-            //  console.info(data);
             document.querySelector(".bordeCountry").innerHTML = data;
           },
         });
-        //return data;
       });
     }
   };

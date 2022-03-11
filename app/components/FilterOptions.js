@@ -5,7 +5,6 @@ export function FilterOptions() {
   $select.classList.add("select-flag");
 
   d.addEventListener("click", (e) => {
-    //  console.info(e.target);
     if (e.target.matches(".mainFilter *") || e.target.matches(".mainFilter")) {
       d.querySelector(".filterRegionArrow").classList.toggle("rotate");
       d.querySelector(".options").classList.toggle("none");
@@ -36,34 +35,44 @@ export function FilterOptions() {
   });
 
   d.addEventListener("keyup", (e) => {
-    e.stopPropagation();
+    let Allflags = Array.from(d.querySelectorAll("[data-name]"));
+
+    let filtroIgual = Allflags.filter((flag) =>
+      flag.dataset.name.includes(e.target.value)
+    );
+    let NoIgual = Allflags.filter(
+      (flag) => !flag.dataset.name.includes(e.target.value)
+    );
     if (e.key === "Escape") {
-      e.target.value = "";
+      e.target = "";
     }
 
-    let coincidencias = 0;
-    d.querySelectorAll("[data-id]").forEach((el) => {
-      el.dataset.name;
-      console.info(el.dataset.name.includes(e.target.value));
-      if (el.dataset.name.includes(e.target.value)) {
-        coincidencias += 1;
-        el.classList.remove("filter");
-      } else {
-        el.classList.add("filter");
-        if (coincidencias === 0) {
-        }
-      }
-      // console.info(coincidencias);
-      //   el.classList.remove("filter");
-      // } else {
-      //   el.classList.add("filter");
-      //   setTimeout(() => {
-      //     document.getElementById(
-      //       "containerFlags"
-      //     ).innerHTML = `<h2>Not Fouund <a href="http://127.0.0.1:5500/">Back to Home</a></h2>`;
-      //   }, 3000);
-      // }
-    });
+    if (filtroIgual.length === 0) {
+      NoIgual.forEach((flag) => {
+        flag.classList.add("filter");
+      });
+
+      document.querySelector(".error").classList.remove("none");
+    } else {
+      document.querySelector(".error").classList.add("none");
+      filtroIgual.forEach((flag) => {
+        flag.classList.remove("filter");
+      });
+
+      NoIgual.forEach((flag) => {
+        flag.classList.add("filter");
+      });
+    }
+    // }
+    // console.info(coincidencias);
+    //   el.classList.remove("filter");
+    // } else {
+    //   el.classList.add("filter");
+    //   setTimeout(() => {
+    //     document.getElementById(
+    //       "containerFlags"
+    //     ).innerHTML = `<h2>Not Fouund <a href="http://127.0.0.1:5500/">Back to Home</a></h2>`;
+    //   }, 3000);
   });
   $select.innerHTML = `
   <div class="mainFilter" data-dark = "darkMode">
