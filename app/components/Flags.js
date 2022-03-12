@@ -11,7 +11,9 @@ export function Flags(props) {
   }" data-dark = "darkMode">
 
   <div class="flag_image"  data-dark = "darkMode">
- <a href="#/${cca2}"><img src="${flags.svg}" alt="${name.common}_flag"></a> 
+ <a href="#/${cca2}"><img src="${flags.svg}" loading="lazy" alt="${
+    name.common
+  }_flag"></a> 
   </div>
 
   <div class="flag_short__description"  data-dark = "darkMode">
