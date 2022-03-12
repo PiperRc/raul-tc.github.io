@@ -22,12 +22,10 @@ export function Router() {
         let htmlContent = "";
         flags.forEach((flag) => {
           htmlContent += Flags(flag);
-
-          $containerFlag.innerHTML = htmlContent;
         });
+        $containerFlag.innerHTML = htmlContent;
 
         $containerFlag.appendChild(ErrorSearch());
-        document.querySelector(".loader").style.display = "none";
       },
     });
   } else {
@@ -38,8 +36,8 @@ export function Router() {
       url: `https://restcountries.com/v3.1/alpha/${urlCountry}`,
       cbSuccess: (flagData) => {
         $main.innerHTML = Flag(flagData[0]);
-        document.querySelector(".loader").style.display = "none";
       },
     });
+    d.querySelector(".loader").style.display = "none";
   }
 }
