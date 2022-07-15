@@ -3,7 +3,7 @@ export function ErrorSearch() {
 
   $containerError.classList.add("error", "none");
   $containerError.innerHTML = `
-<h2> Country not found 😞.</h2>
+<h2> Country not found...</h2>
 
   `;
   return $containerError;

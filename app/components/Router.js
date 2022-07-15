@@ -26,6 +26,7 @@ export function Router() {
         $containerFlag.innerHTML = htmlContent;
 
         $containerFlag.appendChild(ErrorSearch());
+        d.querySelector(".loader").style.display = "none";
       },
     });
   } else {

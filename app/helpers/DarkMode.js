@@ -17,7 +17,6 @@ export function DarkMode() {
   };
 
   d.addEventListener("click", (e) => {
-    console.info(e.target);
     if (
       e.target.matches(".container_button") ||
       e.target.matches(".container_button p") ||

@@ -20,7 +20,6 @@ export function FilterOptions() {
     }
 
     if (e.target.matches(".country")) {
-      console.info(e.target.textContent);
       d.querySelector(".options").classList.add("none");
       d.querySelector(".deleteFilter").classList.remove("none");
 
@@ -63,16 +62,6 @@ export function FilterOptions() {
         flag.classList.add("filter");
       });
     }
-    // }
-    // console.info(coincidencias);
-    //   el.classList.remove("filter");
-    // } else {
-    //   el.classList.add("filter");
-    //   setTimeout(() => {
-    //     document.getElementById(
-    //       "containerFlags"
-    //     ).innerHTML = `<h2>Not Fouund <a href="http://127.0.0.1:5500/">Back to Home</a></h2>`;
-    //   }, 3000);
   });
   $select.innerHTML = `
   <div class="mainFilter" data-dark = "darkMode">

@@ -5,7 +5,6 @@ export function ScrollTop() {
   $element.classList.add("containerArrowTop");
   $element.appendChild($childArrow);
   document.addEventListener("scroll", (e) => {
-    console.info(window.scrollY);
     if (window.scrollY > 1000) {
       document.querySelector(".containerArrowTop").classList.add("visible");
       document.querySelector(".scrollTop").classList.add("visible");

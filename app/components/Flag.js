@@ -23,24 +23,22 @@ export function Flag(props) {
   });
 
   const getCurrencies = () => {
-    let valores = Object.values(currencies); // claves = ["nombre", "color", "macho", "edad"]
+    let valores = Object.values(currencies);
     for (let i = 0; i < valores.length; i++) {
       return valores[i].name;
     }
   };
 
   const getNativeName = () => {
-    let valores = Object.values(name.nativeName); // claves = ["nombre", "color", "macho", "edad"]
+    let valores = Object.values(name.nativeName);
     for (let i = 0; i < valores.length; i++) {
       return valores[0].official;
     }
   };
 
   const getLanguages = () => {
-    let valores = Object.values(languages); // claves = ["nombre", "color", "macho", "edad"]
+    let valores = Object.values(languages);
     let lang = "";
-    let cadena;
-    var expresionRegular = " ";
     for (let i = 0; i < valores.length; i++) {
       lang = `${valores}`;
     }
@@ -58,7 +56,6 @@ export function Flag(props) {
         await requestFlag({
           url: `https://restcountries.com/v3.1/alpha/${border}`,
           cbSuccess: (abc) => {
-            console.info(abc);
             data += `<a href="#/${abc[0].cca2}"><span data-dark="darkMode">${abc[0].name.common}</span></a>`;
             document.querySelector(".bordeCountry").innerHTML = data;
           },
